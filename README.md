@@ -6,19 +6,25 @@
 
 ```
 saucedemo-test-automation/
-├── conftest.py              # pytest 配置（fixture: WebDriver 管理）
-├── pages/                   # 页面对象层
-│   ├── base_page.py         # 基础页面（通用操作封装）
-│   ├── login_page.py        # 登录页
-│   ├── inventory_page.py    # 商品列表页
-│   ├── cart_page.py         # 购物车页
-│   └── checkout_page.py     # 结算页
-├── tests/                   # 测试用例
-│   ├── test_login.py        # 登录模块（4 条）
-│   ├── test_inventory.py    # 商品列表模块（4 条）
-│   ├── test_cart.py         # 购物车模块（2 条）
-│   └── test_checkout.py     # 结算模块（2 条）
-├── reports/                 # 测试报告输出
+├── SauceDemo_测试用例.xlsx          # Excel 测试用例文档（35条）
+│   ├── 测试用例                    # 专业格式测试用例
+│   ├── 测试数据                    # 测试账号信息
+│   └── 覆盖概览                    # 按模块/优先级统计
+├── generate_testcases.py           # Excel 测试用例生成器
+├── test_saucedemo.py               # 全流程自动化脚本
+├── conftest.py                     # pytest 配置（fixture: WebDriver 管理）
+├── pages/                          # 页面对象层
+│   ├── base_page.py                # 基础页面（通用操作封装）
+│   ├── login_page.py               # 登录页
+│   ├── inventory_page.py           # 商品列表页
+│   ├── cart_page.py                # 购物车页
+│   └── checkout_page.py            # 结算页
+├── tests/                          # POM 测试用例
+│   ├── test_login.py               # 登录模块（4 条）
+│   ├── test_inventory.py           # 商品列表模块（4 条）
+│   ├── test_cart.py                # 购物车模块（2 条）
+│   └── test_checkout.py            # 结算模块（2 条）
+├── reports/                        # 测试报告输出
 ├── requirements.txt
 └── README.md
 ```
@@ -33,7 +39,20 @@ saucedemo-test-automation/
 | pytest-html | HTML 测试报告 |
 | Page Object Model | 设计模式 |
 
-## 测试覆盖范围（12 条用例）
+## 测试覆盖
+
+### Excel 测试用例（35 条）
+
+| 测试模块 | 用例数 | 优先级分布 |
+|---------|--------|-----------|
+| 登录 | 16 条 | P0~P3 |
+| 商品浏览 | 5 条 | P0/P2 |
+| 购物车 | 4 条 | P1/P2 |
+| 结账 | 6 条 | P0~P2 |
+| 异常账户 | 3 条 | P2/P3 |
+| 退出 | 1 条 | P1 |
+
+### POM 自动化测试（12 条）
 
 ### 登录模块
 - ✅ 正确账号密码登录成功
